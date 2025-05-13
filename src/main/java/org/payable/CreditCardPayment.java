@@ -11,7 +11,7 @@ public class CreditCardPayment implements Payable{
 
     @Override
     public void pay (double amount) {
-        System.out.printf("Processing credit card payment of $%.2 with card ending in %s for %s\n",
+        System.out.printf("Processing credit card payment of $%.2f with card ending in %s for %s\n",
                 amount, cardNumber.substring(cardNumber.length() - 4), cardHolderName);
     }
 

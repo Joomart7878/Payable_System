@@ -7,7 +7,7 @@ public class PaymentProcessor {
         Random rand = new Random();
 
         for (Payable payment : payments) {
-            double amount = 1 + rand.nextDouble() * 99; //random amount between 1-99
+            double amount = 1 + rand.nextDouble() * 99; //random amount between 1-100
             payment.pay(amount);
         }
     }
