@@ -1,13 +1,13 @@
 package textformatter;
 
 public class FormatFactory {
-    public static void getFormatter(String name) {
+    public static Formatter getFormatter(String name) {
         return switch (name) {
-            case "UppercaseFormatter" = new UppercaseFormatter();
-            case "LowercaseFormatter" = new LowercaseFormatter();
-            case "DashFormatter" = new DashFormatter();
-            case "ReversFormatter" = new ReversFormatter();
-            case "CamelCaseFormatter" = new CamelCaseFormatter();
+            case "UppercaseFormatter" -> new UppercaseFormatter();
+            case "LowercaseFormatter" -> new LowercaseFormatter();
+            case "DashFormatter" -> new DashFormatter();
+            case "ReversFormatter" -> new ReversFormatter();
+            case "CamelCaseFormatter" -> new CamelCaseFormatter();
                 default -> throw new IllegalArgumentException("Unknown fomatter: " + name);
         };
     }
