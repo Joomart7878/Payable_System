@@ -17,6 +17,12 @@ public class random_exercises {
         return String.format("Sum: %d, Difference: %d, Product: %d", sum, difference, product);
     }
 
+    // Exercise 2 Leap Year
+    public static boolean isLeapYear(int year) {
+        return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+    }
+
+
 
 
     }
