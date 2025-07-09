@@ -22,7 +22,17 @@ public class random_exercises {
         return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
     }
 
-
+    // Exercise 3 Reverse String
+    public static String reverseString(String input) {
+        if (input == null) return null;
+        char[] chars = input.toCharArray();
+        for (int i=0; i<=chars.length; i++) {
+            char temp = chars[i];
+            chars[i] = chars[chars.length - 1 - i];
+            chars[chars.length - 1 - i] = temp;
+        }
+        return new String(chars);
+    }
 
 
     }
