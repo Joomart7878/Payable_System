@@ -52,6 +52,50 @@ public class random_exercises {
         return secondLargest == Integer.MIN_VALUE ? null : secondLargest;
     }
 
+    // Exercise 5 Basic Class and Encapsulation
+    public static class BankAccount {
+        private String accountNumber;
+        private double balance;
+        private String ownerName;
+
+        public BankAccount(String accountNumber, String ownerNumber, double balance) {
+        }
+
+        public void BankAccount(String accountNumber, String ownerName, double balance) {
+            this.accountNumber = accountNumber;
+            this.balance = balance;
+            this.ownerName = ownerName;
+        }
+
+        public BankAccount(String accountNumber) {
+            this.accountNumber = accountNumber;
+        }
+
+        public String getAccountNumber() {return accountNumber;}
+        public double getBalance() {return balance;}
+        public String getOwnerName() {return ownerName;}
+
+        public void setOwnerName(String ownerName) {
+            this.ownerName = ownerName;
+        }
+
+        public void deposit(double amount) {
+            if (amount > 0){
+                balance += amount;
+            }
+        }
+        public void withdraw (double amount) {
+            if (amount > 0 && amount <= balance) {
+                balance -= amount;
+            }
+        }
+        @Override
+        public String toString() {
+            return String.format("Account{$s, Owner: $s, Balance: %.2f", accountNumber, ownerName, balance);
+        }
+    }
+
+
 
 
     }
