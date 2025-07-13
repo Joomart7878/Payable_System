@@ -95,6 +95,28 @@ public class random_exercises {
         }
     }
 
+    // Exercise 6 Constructor Overloading and this keyword
+    static class BankAccountExtended extends BankAccount {
+        public BankAccountExtended() {
+            this("DEFAULT-001", "Unknown", 0.0);
+        }
+
+        public BankAccountExtended(String ownerName) {
+            this(generateAccountNumber(), ownerName, 0.0);
+        }
+
+        public BankAccountExtended(String ownerName, double balance) {
+            this(generateAccountNumber(), ownerName, balance);
+        }
+
+        public BankAccountExtended(String accountNumber, String ownerNumber, double balance) {
+            super(accountNumber, ownerNumber, balance);
+        }
+
+        private static String generateAccountNumber() {
+            return "ACC-" + System.currentTimeMillis() % 100000;
+        }
+    }
 
 
 
