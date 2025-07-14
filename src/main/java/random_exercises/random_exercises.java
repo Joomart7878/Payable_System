@@ -118,6 +118,35 @@ public class random_exercises {
         }
     }
 
+    // Exercise 7 Inheritance and Method Overriding
+    static class SavingAccount extends BankAccount {
+        private double interestRate;
+
+        public SavingAccount(String accountNumber, String ownerName, double balance, double interestRate) {
+            super(accountNumber, ownerName, balance);
+            this.interestRate = interestRate;
+        }
+
+        public double getInterestRate() {return interestRate;}
+        public void setInterestRate(double interestRate) {this.interestRate = interestRate;}
+
+        public double calculateMonthlyInterest() {
+            return getBalance() * (interestRate / 12 / 100);
+        }
+
+        public void applyInterest() {
+            double interest = calculateMonthlyInterest();
+            deposit(interest);
+        }
+
+        @Override
+        public String toString() {
+            return super.toString() + String.format(", Interest Rate: %2f%%", interestRate);
+        }
+    }
+
+
+
 
 
     }
