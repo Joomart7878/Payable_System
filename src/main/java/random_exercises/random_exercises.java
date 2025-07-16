@@ -180,6 +180,17 @@ public class random_exercises {
         }
     }
 
+    // Exercise 9 ArrayList and Enhanced For Loop
+    public static List<String> filterStrings(List<String> strings) {
+        List<String> result = new ArrayList<>();
+        for (String str : strings) {
+            if (str != null && str.length() > 3 && Character.isUpperCase(str.charAt(0))) {
+                result.add(str);
+            }
+        }
+        return result;
+    }
+
 
     }
 
