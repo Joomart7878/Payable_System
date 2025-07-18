@@ -208,6 +208,13 @@ public class random_exercises {
                 .orElse(null);
     }
 
+    // Exercise 11 Generic Methods and Wildcards
+    public static double sumNumbers(List<? extends Number> numbers) {
+        return numbers.stream()
+                .mapToDouble(Number::doubleValue)
+                .sum();
+    }
+
 
 
 
