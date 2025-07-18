@@ -215,6 +215,26 @@ public class random_exercises {
                 .sum();
     }
 
+    // Exercise 12 Functional Interfaces and Lambda Expressions
+    @FunctionalInterface
+    interface MathOperation{
+        int calculate(int a, int b);
+    }
+
+    public static int applyOperation(int a, int b, MathOperation operation) {
+        return operation.calculate(a, b);
+    }
+
+    public static void demonstrateLambdas() {
+        MathOperation addition = Integer::sum;
+        MathOperation multiplication = (x, y) -> x * y;
+        MathOperation substraction = (x, y) -> x - y;
+
+        System.out.println("Addition: " + applyOperation(5, 3, addition));
+        System.out.println("Maltiplication: " + applyOperation(5, 3, multiplication));
+        System.out.println("Substracton: " + applyOperation(5, 3, substraction));
+
+    }
 
 
 
