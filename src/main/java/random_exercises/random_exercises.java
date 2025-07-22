@@ -291,6 +291,48 @@ public class random_exercises {
         );
     }
 
+    // Exercise 16 Exception Handling and Custom Exceptions
+    static class InsufficientFundsExceptions extends Exception{
+        public InsufficientFundsExceptions(String message) {
+            super(message);
+        }
+    }
+
+    static class BankAccountExceptions extends BankAccount {
+        public BankAccountExceptions(String accountNumber, String ownerName, double balance){
+            super(accountNumber, ownerName, balance);
+
+        }
+        public void withdrawWithException(double amount) throws InsufficientFundsExceptions {
+            if (amount > getBalance()) {
+                throw new InsufficientFundsExceptions(
+                        String.format("Insufficient funds. Requested: %.2f, Avaialable: %.2f",
+                                amount, getBalance())
+                );
+            }
+            withdraw(amount);
+        }
+    }
+
+    public static List<Double> processWithdrawals(BankAccountExceptions account, List<Double> amounts) {
+        List<Double> successful = new ArrayList<>();
+        for (double amount : amounts) {
+            try {
+                account.withdrawWithException(amount);
+                successful.add(amount);
+            } catch (InsufficientFundsExceptions e) {
+                System.out.println("Failed withdrawal: " + e.getMessage());
+            }
+        }
+        return successful;
+
+    }
+
+    public record Product(long id, String name, String category) {
+        public Object price() {
+            return null;
+        }
+    }
 
 
 
