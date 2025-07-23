@@ -334,12 +334,12 @@ public class random_exercises {
         }
     }
 
-//    // Exercise 17 Records (Java 14+)
-//    public static List<Product> findProductsByCategory(List<Product> products, String category) {
-//        return products.stream()
-//                .filter(p -> p.category().equalsIgnoreCase(category))
-//                .collect(Collectors.toList());
-//    }
+    // Exercise 17 Records (Java 14+)
+    public static List<Product> findProductsByCategory(List<Product> products, String category) {
+        return products.stream()
+                .filter(p -> p.category().equalsIgnoreCase(category))
+                .collect(Collectors.toList());
+    }
 //
 //    public static BigDecimal calculateTotalValue(List<Product> products) {
 //        return products.stream()
