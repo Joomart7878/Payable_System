@@ -334,23 +334,23 @@ public class random_exercises {
         }
     }
 
-    // Exercise 17 Records (Java 14+)
-    public static List<Product> findProductsByCategory(List<Product> products, String category) {
-        return products.stream()
-                .filter(p -> p.category().equalsIgnoreCase(category))
-                .collect(Collectors.toList());
-    }
-
+//    // Exercise 17 Records (Java 14+)
+//    public static List<Product> findProductsByCategory(List<Product> products, String category) {
+//        return products.stream()
+//                .filter(p -> p.category().equalsIgnoreCase(category))
+//                .collect(Collectors.toList());
+//    }
+//
 //    public static BigDecimal calculateTotalValue(List<Product> products) {
 //        return products.stream()
 //                .map(Product::price)
 //                .reduce(BigDecimal.ZERO, BigDecimal::add);
 //    }
-
-    public static Map<String, List<Product>> groupProductByCategory(List<Product> products) {
-        return products.stream()
-                .collect(Collectors.groupingBy(Product::category));
-    }
+//
+//    public static Map<String, List<Product>> groupProductByCategory(List<Product> products) {
+//        return products.stream()
+//                .collect(Collectors.groupingBy(Product::category));
+//    }
 
 
     }
