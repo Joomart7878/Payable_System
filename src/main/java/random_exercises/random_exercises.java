@@ -341,11 +341,11 @@ public class random_exercises {
                 .collect(Collectors.toList());
     }
 
-    public static BigDecimal calculateTotalValue(List<Product> products) {
-        return products.stream()
-                .map(Product::price)
-                .reduce(BigDecimal.ZERO, BigDecimal::add);
-    }
+//    public static BigDecimal calculateTotalValue(List<Product> products) {
+//        return products.stream()
+//                .map(Product::price)
+//                .reduce(BigDecimal.ZERO, BigDecimal::add);
+//    }
 
     public static Map<String, List<Product>> groupProductByCategory(List<Product> products) {
         return products.stream()
